@@ -1,0 +1,72 @@
+freenove_4WD_smart_car:
+  message_broker_ip: '0.0.0.0'
+  sensors:
+    linetracker:
+      id: 'linetracker_id'
+      type: 'vector'
+      address: 'linetracker_address'
+      topic: 'linetracker_topic_noros_to_ros'
+      time: 0.50
+    # lightsensor:
+    #   id: 'lightsensor_id'
+    #   type: 'vector'
+    #   address: 'lightsensor_address'
+    #   data: null
+    # linetracker:
+    #   id: 'linetracker'
+    #   type: 'vector'
+    #   address: 'linetracker_address'
+    #   data: null
+  actuators:
+    motion:
+      id: 'motion_id'
+      address: 'motion_address'
+      topic: 'motion_topic_ros_to_noros'
+      commands:
+        - go_forward
+        # - go_backward
+        # - turn_left
+        # - turn_right
+        # - action_atomic
+        # - action_indefinite
+        # - action_durative_no_data
+        # - action_durative
+    # led:
+    #   id: 'led_id'
+    #   address: 'led_address'
+    #   commands:
+    #     - switch_on
+    #     - switch_off
+  commands:
+    go_forward:
+      data: 'twist'
+      time: 0.10
+    # go_backward:
+      # data: false
+      # time: false
+    # turn_left:
+      # data: false
+      # time: false
+    # turn_right:
+      # data: false
+      # time: false
+      
+    # action_atomic:
+    #   data: false
+    #   time: false
+    # action_indefinite:
+    #   data: true
+    #   time: false
+    # action_durative_no_data:
+    #   data: false
+    #   time: true
+    # action_durative:
+    #   data: true
+    #   time: true
+
+    # switch_on:
+    #   data: false
+    #   time: false
+    # switch_off:
+    #   data: false
+    #   time: false

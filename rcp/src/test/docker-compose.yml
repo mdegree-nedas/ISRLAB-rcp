@@ -1,0 +1,15 @@
+version: '3'
+services:
+    ros:
+        build: ./init
+        volumes:
+            - "./workspace:/root/workspace"
+        depends_on:
+            - redis
+        network_mode: "host"
+
+    redis:
+        image: redis:6.2.2-buster
+        # ports:
+        #     - "6379:6379"
+        network_mode: "host"

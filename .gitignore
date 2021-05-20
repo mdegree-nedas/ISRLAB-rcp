@@ -1,0 +1,7 @@
+rcp/bin
+rcp/include
+rcp/lib
+rcp/lib64
+rcp/pyvenv.cfg
+
+__pycache__
