@@ -17,7 +17,7 @@ PYTHON_X ?= python
 RCP_X ?= rcp.py
 
 .SILENT: help
-.PHONY: help # (help)      print this help text
+.PHONY: help # ----- (help)  print this help text
 help:
 	@grep '^.PHONY: .* #' $(firstword $(MAKEFILE_LIST)) |\
 		sed 's/\.PHONY: \(.*\) # \(.*\)/\1 # \2/' |\
@@ -27,27 +27,28 @@ help:
 # RCP INIT
 
 r_build: r_init r_install
-.PHONY: rcp # ----- (combo)[rcp] build
+
+.PHONY: rcp # ----- (combo) build rcp
 rcp: r_build
 
-.PHONY: r_init # [rcp] initialize python venv
+.PHONY: r_init # (build)     initialize python venv
 r_init:
 	$(PYTHON_X) -m venv $(RCP_PATH)
 
 .ONESHELL:
-.PHONY: r_install # [rcp] source python venv and install dependencies
+.PHONY: r_install # (build)     source python venv and install dependencies
 r_install:
 	. $(RCP_PATH)/bin/activate
 	$(PYTHON_X) -m $(PIP_X) install --upgrade $(PIP_X)
 	$(PIP_X) install -r $(RCP_PATH)/requirements.txt
 
 .ONESHELL:
-.PHONY: r_resolve # [rcp] source python venv and update requirements.txt
+.PHONY: r_resolve # (build)     source python venv and update requirements.txt
 r_resolve:
 	. $(RCP_PATH)/bin/activate
 	$(PIP_X) freeze > $(RCP_PATH)/requirements.txt
 
-.PHONY: r_clean # [rcp] clean python venv
+.PHONY: r_clean # (build)     clean python venv
 r_clean:
 	-rm -rf $(RCP_PATH)/bin
 	-rm -rf $(RCP_PATH)/include
