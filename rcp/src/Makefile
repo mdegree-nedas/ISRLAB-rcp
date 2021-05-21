@@ -75,8 +75,12 @@ exec_remote_ros:
 exec_remote_rpi:
 	$(PYTHON_X) $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)main.py
 
-.SILENT: exec_local
-.PHONY: exec_local # (exec)      exec ros/noros examples in local env
-exec_local:
+.SILENT: exec_local_compose
+.PHONY: exec_local_compose # (exec)      exec ros/noros examples in local env (only docker-compose part)
+exec_local_compose:
 	$(DOCKER_COMPOSE_X) -f ./test/docker-compose.yml up
+
+.SILENT: exec_local_host
+.PHONY: exec_local_host # (exec)      exec ros/noros examples in local env (only host part)
+exec_local_host:
 	$(PYTHON_X) $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)main.py

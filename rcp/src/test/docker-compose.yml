@@ -10,6 +10,4 @@ services:
 
     redis:
         image: redis:6.2.2-buster
-        # ports:
-        #     - "6379:6379"
         network_mode: "host"
