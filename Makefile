@@ -4,7 +4,7 @@ PREFIX ?= ./
 VENV ?= $(PREFIX)rcp/
 
 PYTHON_X ?= python3
-PIP_X ?= pip3
+PIP_X ?= pip
 
 .SILENT: help
 .PHONY: help # ----- (help)  print this help text
