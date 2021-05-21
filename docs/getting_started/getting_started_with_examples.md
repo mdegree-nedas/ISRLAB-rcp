@@ -76,7 +76,7 @@ user@host:~$ make exec_local_host
 the robot configuration file must contain the IP of your linux/amd64 machine that contains the ros part:
 - open the robot configuration file config/freenove.yml with your preferred text editor and set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
 
-### execution
+#### execution
 - we assume that in the robot configuration file config/freenove.yml you have set the correct IP in the "message_broker_ip" field
 
 - terminal 1: ros part (linux/amd64 machine)
@@ -107,7 +107,7 @@ user@host:~$ make exec_remote_rpi
 the robot configuration file must contain the IP of your linux/amd64 machine that contains the ros part:
 - open the robot configuration file config/freenove.yml with your preferred text editor and set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
 
-### execution
+#### execution
 - we assume that in the robot configuration file config/freenove.yml you have set the correct IP in the "message_broker_ip" field
 
 - terminal 1: ros part (linux/amd64 machine)
