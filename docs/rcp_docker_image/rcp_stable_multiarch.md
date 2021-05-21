@@ -1,4 +1,4 @@
-###### rcp image build and push (multi-architecture image)
+##### rcp image build and push (multi-architecture image)
 
 - A useful docker multi-arch images [guide](https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408)
 
@@ -9,7 +9,6 @@
 ```console
 user@host:~$ docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 user@host:~$ docker buildx create --name mybuilder
-mybuilder
 user@host:~$ docker buildx use mybuilder
 user@host:~$ docker buildx inspect --bootstrap
 user@host:~$ export DOCKER_USER="your_docker_username"
