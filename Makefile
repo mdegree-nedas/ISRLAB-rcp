@@ -3,8 +3,8 @@
 PREFIX ?= ./
 VENV ?= $(PREFIX)rcp/
 
-PYTHON_X ?= python
-PIP_X ?= pip
+PYTHON_X ?= python3
+PIP_X ?= pip3
 
 .SILENT: help
 .PHONY: help # ----- (help)  print this help text
