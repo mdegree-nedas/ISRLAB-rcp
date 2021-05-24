@@ -30,12 +30,12 @@ user@host:~$ cd src
 - terminal 1: ros part
 ```console
 user@host:~$ make build_actuators
-user@host:~$ make exec_local_compose
+user@host:~$ make exec_local_ros
 ```
 
 - terminal 2: host part
 ```console
-user@host:~$ make exec_local_host
+user@host:~$ make exec_local_rpi
 ```
 
 - example result:
@@ -52,12 +52,12 @@ user@host:~$ make exec_local_host
 - terminal 1: ros part
 ```console
 user@host:~$ make build_sensors
-user@host:~$ make exec_local_compose
+user@host:~$ make exec_local_ros
 ```
 
 - terminal 2: host part
 ```console
-user@host:~$ make exec_local_host
+user@host:~$ make exec_local_rpi
 ```
 
 - example result:
