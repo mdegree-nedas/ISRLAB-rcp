@@ -26,10 +26,10 @@ user@host:~$ cd src
 ```
 
 ## 3. Execute examples
-- You need two terminals to execute the examples.
-- Thus, you have to open a new terminal and with the new terminal you have follow the steps that you have already followed with one terminal.
-- As a reminder, you have to follow the steps in [enter in the repository](#2-enter-in-the-repository) and in [mount and source the Python virtual environment](#3-mount-and-source-the-python-virtual-environment) 
-- Now, you are ready to test our examples
+- you need two terminals to execute the examples.
+- thus, you have to open a new terminal and in this new terminal you have follow the steps that you have already followed with one terminal.
+- as a reminder: you have to follow the steps written in [enter in the repository](#2-enter-in-the-repository) and in [mount and source the Python virtual environment](#3-mount-and-source-the-python-virtual-environment) 
+- now, you are ready to test our examples
 
 ### Example 1: actuators (both ROS and host are in the same machine)
 - we assume that you have two terminals. In one terminal we will execute the ROS part and in the other one we will execute the host part
@@ -76,7 +76,7 @@ user@host:~$ make exec_local_rpi
 
 
 ### Example 3: actuators (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
-- we assume that you have pulled the repo in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
+- we assume that you have already pulled the repository in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
 - we assume that in both terminals you have already mounted and sourced the Python virtual environment
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
@@ -99,7 +99,7 @@ user@host:~$ make build_actuators
 user@host:~$ make exec_remote_rpi
 ```
 
-- example result:
+- example result screenshot:
 	- on the left, the ROS part terminal (in the linux/amd64 machine)
 	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
 
@@ -107,7 +107,7 @@ user@host:~$ make exec_remote_rpi
 
 
 ### Example 4: sensors (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
-- we assume that you have pulled the repo in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
+- we assume that you have already pulled the repo in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
 - we assume that in both terminals you have already mounted and sourced the Python virtual environment
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
@@ -130,7 +130,7 @@ user@host:~$ make build_sensors
 user@host:~$ make exec_remote_rpi
 ```
 
-- example result:
+- example result screenshot:
 	- on the left, the ROS part terminal (in the linux/amd64 machine)
 	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
 
@@ -146,7 +146,7 @@ user@host:~$ make clean
 
 
 ## Deactivate the Python virtual environment
-- you will execute this step if you are exiting
+- you want to execute this step if you are exiting the repository
 - we assume that you have already cleaned the rcp workspace
 - we assume that you have already a terminal opened in the directory ```<rcp-repo>```
 - we assume that you have already mounted and sourced the Python virtual environment
