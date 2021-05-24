@@ -28,7 +28,7 @@ user@host:~$ cd src
 ## 3. Execute examples
 - You need two terminals to execute the examples.
 - Thus, you have to open a new terminal and with the new terminal you have follow the steps that you have already followed with one terminal.
-- As a reminder, you have to follow the steps in [enter in the repository](2-enter-in-the-repository) and in [mount and source the Python virtual environment](3-mount-and-source-the-python-virtual-environment) 
+- As a reminder, you have to follow the steps in [enter in the repository](#2-enter-in-the-repository) and in [mount and source the Python virtual environment](#3-mount-and-source-the-python-virtual-environment) 
 - Now, you are ready to test our examples
 
 ### Example 1: actuators (both ROS and host are in the same machine)
