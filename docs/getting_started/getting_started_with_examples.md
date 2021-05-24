@@ -25,7 +25,7 @@ user@host:~$ . bin/activate
 user@host:~$ cd src
 ```
 
-## 3. Execute examples
+## 4. Execute examples
 - you need two terminals to execute the examples.
 - thus, you have to open a new terminal and in this new terminal you have to follow the steps that you have already followed with one terminal.
 - as a reminder: you have to follow the steps written in the sections [enter in the repository](#2-enter-in-the-repository) and [mount and source the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
