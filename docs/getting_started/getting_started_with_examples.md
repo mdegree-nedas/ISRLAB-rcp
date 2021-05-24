@@ -8,7 +8,7 @@ remember that it is a best practise to perform a [cleaning step](#clean-the-rcp-
 ## 1. Pull this repository
 
 ```console
-user@host:~$ git pull https://github.com/mdegree-nedas/rcp.git
+user@host:~$ git clone https://github.com/mdegree-nedas/rcp.git
 ```
 - we will refer the git downloaded directory (the root of this repository) as ```<rcp-repo>```
 
