@@ -1,6 +1,8 @@
 version: '3'
 services:
     ros:
+        hostname: ros
+        container_name: ros
         build: ./init
         volumes:
             - "./workspace:/root/workspace"
@@ -10,4 +12,6 @@ services:
 
     redis:
         image: redis:6.2.2-buster
+        hostname: redis
+        container_name: redis
         network_mode: "host"
