@@ -33,7 +33,7 @@ user@host:~$ cd src
 
 ### Example 1: actuators (both ROS and host are in the same machine)
 - we assume that you have two terminals. In one terminal we will execute the ROS part and in the other one we will execute the host part
-- we assume that in both terminals you have already mounted and sourced the Python virtual environment
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 - terminal 1: ROS part
 ```console
@@ -55,7 +55,7 @@ user@host:~$ make exec_local_rpi
 
 ### Example 2: sensors (both ROS and host are in the same machine)
 - we assume that you have two terminals. In one terminal we will execute the ROS part and in the other one we will execute the host part
-- we assume that in both terminals you have already mounted and sourced the Python virtual environment
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 - terminal 1: ROS part
 ```console
@@ -77,7 +77,7 @@ user@host:~$ make exec_local_rpi
 
 ### Example 3: actuators (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
 - we assume that you have already pulled the repository in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
-- we assume that in both terminals you have already mounted and sourced the Python virtual environment
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
 #### preparation step
@@ -107,8 +107,8 @@ user@host:~$ make exec_remote_rpi
 
 
 ### Example 4: sensors (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
-- we assume that you have already pulled the repo in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
-- we assume that in both terminals you have already mounted and sourced the Python virtual environment
+- we assume that you have already pulled the repository in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
 #### preparation step
@@ -139,7 +139,7 @@ user@host:~$ make exec_remote_rpi
 
 ## Clean the rcp workspace
 - we assume that you have already a terminal opened in the directory ```<rcp-repo>/rcp/src```
-- we assume that you have already mounted and sourced the Python virtual environment
+- we assume that you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 ```console
 user@host:~$ make clean
 ```
@@ -147,14 +147,14 @@ user@host:~$ make clean
 
 ## Deactivate the Python virtual environment
 - you want to execute this step if you are exiting the repository
-- we assume that you have already cleaned the rcp workspace
-- we assume that you have already a terminal opened in the directory ```<rcp-repo>```
-- we assume that you have already mounted and sourced the Python virtual environment
+- we assume that you have already [cleaned the rcp workspace](#clean-the-rcp-workspace)
+- we assume that you have already the terminal opened in the directory ```<rcp-repo>```
+- we assume that you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
 ```console
 user@host:~$ deactivate
 user@host:~$ make clean
 ```
 
 ## Troubleshooting
-- if you are experiencing some errors while executing the examples, [cleaning](#clean-the-rcp-workspace) the workspace maybe will help. 
+- if you are experiencing some errors while executing the examples, [cleaning](#clean-the-rcp-workspace) the rcp workspace maybe will help. 
 - if your terminal with docker-compose is not showing results in our sensors examples, try waiting a little more. We have noticed that docker-compose tend to flush the results after some seconds.
