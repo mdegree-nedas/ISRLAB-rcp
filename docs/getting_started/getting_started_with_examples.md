@@ -81,11 +81,13 @@ user@host:~$ make exec_local_rpi
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
 #### preparation step
-the robot configuration file must contain the IP of your linux/amd64 machine that contains the ROS part:
-- open the robot configuration file config/freenove.yml with your preferred text editor and set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
+the robot configuration file must contain the IP of your linux/amd64 machine that contains the ROS part and the exposed PORT in which the redis service is running:
+- open the robot configuration file config/freenove.yml with your preferred text editor and:
+	- set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
+	- set the field "message_broker_port", in this field you must put the exposed PORT in which the redis service is running
 
 #### execution
-- we assume that in the robot configuration file config/freenove.yml you have already set the correct IP in the "message_broker_ip" field
+- we assume that in the robot configuration file config/freenove.yml you have already set the correct IP in the "message_broker_ip" field and the correct PORT in the "message_broker_port" field
 
 - terminal 1: ROS part (linux/amd64 machine)
 ```console
@@ -112,11 +114,13 @@ user@host:~$ make exec_remote_rpi
 - we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
 
 #### preparation step
-the robot configuration file must contain the IP of your linux/amd64 machine that contains the ROS part:
-- open the robot configuration file config/freenove.yml with your preferred text editor and set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
+the robot configuration file must contain the IP of your linux/amd64 machine that contains the ROS part and the exposed PORT in which the redis service is running:
+- open the robot configuration file config/freenove.yml with your preferred text editor and:
+	- set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
+	- set the field "message_broker_port", in this field you must put the exposed PORT in which the redis service is running
 
 #### execution
-- we assume that in the robot configuration file config/freenove.yml you have already set the correct IP in the "message_broker_ip" field
+- we assume that in the robot configuration file config/freenove.yml you have already set the correct IP in the "message_broker_ip" field and the correct PORT in the "message_broker_port" field
 
 - terminal 1: ROS part (linux/amd64 machine)
 ```console
