@@ -41,7 +41,7 @@ user@host:~$ make build_actuators
 user@host:~$ docker-compose -f test/docker-compose.yml up
 ```
 
-- terminal 2: host part
+- terminal 2: host part (execute this when the ROS part is ready)
 ```console
 user@host:~$ make exec_local_rpi
 ```
@@ -63,7 +63,7 @@ user@host:~$ make build_sensors
 user@host:~$ docker-compose -f test/docker-compose.yml up
 ```
 
-- terminal 2: host part
+- terminal 2: host part (execute this when the ROS part is ready)
 ```console
 user@host:~$ make exec_local_rpi
 ```
@@ -95,7 +95,7 @@ user@host:~$ make build_actuators
 user@host:~$ docker-compose -f test/docker-compose.yml up
 ```
 
-- terminal 2: host part
+- terminal 2: host part (execute this when the ROS part is ready)
 ```console
 user@host:~$ make build_actuators
 user@host:~$ make exec_remote_rpi
@@ -128,7 +128,7 @@ user@host:~$ make build_sensors
 user@host:~$ docker-compose -f test/docker-compose.yml up
 ```
 
-- terminal 2: host part
+- terminal 2: host part (execute this when the ROS part is ready)
 ```console
 user@host:~$ make build_sensors
 user@host:~$ make exec_remote_rpi
