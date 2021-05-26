@@ -97,7 +97,9 @@ class NoRosBrokerGenerator:
             + self._cfg_dict[self._gen_name_k]["message_broker_ip"]
             + '"'
             + self._nl,
-            "SERVER_PORT = 6379" + self._nl,
+            "SERVER_PORT = "
+            + str(self._cfg_dict[self._gen_name_k]["message_broker_port"])
+            + self._nl,
             "SERVER_DRDB = 0" + self._nl,
         ]
 

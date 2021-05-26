@@ -9,6 +9,7 @@ class Structure:
     def _initialize(self):
         self._cfg_default_classes = [
             "message_broker_ip",
+            "message_broker_port",
             "sensors",
             "actuators",
             "commands",
@@ -34,14 +35,22 @@ class Structure:
         name_k = self._cfg_vector_name[0]
 
         self._cfg_vector_classes = list(cfg_dict[name_k].keys())
-        assert len(self._cfg_vector_classes) == 4
+        assert len(self._cfg_vector_classes) == 5
         assert self._cfg_vector_classes == self._cfg_default_classes
 
-        mb_ip_k, sensors_k, actuators_k, commands_k = self._cfg_vector_classes[:]
+        (
+            mb_ip_k,
+            mb_port_k,
+            sensors_k,
+            actuators_k,
+            commands_k,
+        ) = self._cfg_vector_classes[:]
 
-        assert type(mb_ip_k) == str
+        assert type(cfg_dict[name_k][mb_ip_k]) == str
         ip_regex = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$")
         assert ip_regex.fullmatch(cfg_dict[name_k][mb_ip_k]) != None
+
+        assert type(cfg_dict[name_k][mb_port_k]) == int
 
         self._cfg_vector_sensors = list(cfg_dict[name_k][sensors_k].keys())
 
