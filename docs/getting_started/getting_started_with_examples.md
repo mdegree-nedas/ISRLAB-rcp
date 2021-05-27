@@ -141,6 +141,61 @@ user@host:~$ make exec_remote_rpi
 ![sensors_example_remote](sensors_remote.png)
 
 
+### Example 5: loop (both ROS and host are in the same machine)
+- we assume that you have two terminals. In one terminal we will execute the ROS part and in the other one we will execute the host part
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
+- we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
+- terminal 1: ROS part
+```console
+user@host:~$ make build_loop
+user@host:~$ docker-compose -f test/docker-compose.yml up
+```
+
+- terminal 2: host part (execute this when the ROS part is ready)
+```console
+user@host:~$ make exec_local_rpi
+```
+
+- example result screenshot:
+	- on the left, the ROS part terminal
+	- on the right, the host part terminal
+
+![actuators_example_local](loop_local.png)
+
+
+### Example 6: loop (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
+- we assume that you have already pulled the repository in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
+- we assume that in both terminals you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
+- we assume that in both terminals you are already in the directory ```<rcp-repo>/rcp/src```
+
+#### preparation step
+the robot configuration file must contain the IP of your linux/amd64 machine that contains the ROS part and the exposed PORT in which the redis service is running:
+- open the robot configuration file config/freenove.yml with your preferred text editor and:
+	- set the field "message_broker_ip", in this field you must put the IP of the linux/amd64 machine
+	- set the field "message_broker_port", in this field you must put the exposed PORT in which the redis service is running
+
+#### execution
+- we assume that in the robot configuration file config/freenove.yml you have already set the correct IP in the "message_broker_ip" field and the correct PORT in the "message_broker_port" field
+
+- terminal 1: ROS part (linux/amd64 machine)
+```console
+user@host:~$ make build_loop
+user@host:~$ docker-compose -f test/docker-compose.yml up
+```
+
+- terminal 2: host part (execute this when the ROS part is ready)
+```console
+user@host:~$ make build_loop
+user@host:~$ make exec_remote_rpi
+```
+
+- example result screenshot:
+	- on the left, the ROS part terminal (in the linux/amd64 machine)
+	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
+
+![actuators_example_remote](loop_remote.png)
+
+
 ## Clean the rcp workspace
 - we assume that you have already a terminal opened in the directory ```<rcp-repo>/rcp/src```
 - we assume that you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
