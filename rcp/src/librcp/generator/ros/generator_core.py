@@ -250,19 +250,21 @@ class RosCoreGenerator:
                 + "Commands()"
                 + self._nl
             )
+            payload.append(
+                self._2tab
+                + "class __"
+                + actuator.capitalize()
+                + "Commands:"
+                + self._nl
+                + self._3tab
+                + "def __init__(self):"
+                + self._nl
+            )
             for command in self._cfg_dict[self._gen_name_k][self._gen_actuators_k][
                 actuator
             ]["commands"]:
                 payload.append(
-                    self._2tab
-                    + "class __"
-                    + actuator.capitalize()
-                    + "Commands:"
-                    + self._nl
-                    + self._3tab
-                    + "def __init__(self):"
-                    + self._nl
-                    + self._4tab
+                    self._4tab
                     + "self."
                     + command
                     + ' = "'

@@ -11,3 +11,13 @@ class Template:
         print("motion.go_forward.callback")
         print("implement this method")
         print(data)
+
+    def motion_turn_left_callback(self, data):
+        print("motion.turn_left.callback")
+        print("implement this method")
+        print(data)
+
+    def motion_turn_right_callback(self, data):
+        print("motion.turn_right.callback")
+        print("implement this method")
+        print(data)

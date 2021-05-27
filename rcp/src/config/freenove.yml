@@ -26,8 +26,8 @@ freenove_4WD_smart_car:
       commands:
         - go_forward
         # - go_backward
-        # - turn_left
-        # - turn_right
+        - turn_left
+        - turn_right
         # - action_atomic
         # - action_indefinite
         # - action_durative_no_data
@@ -41,16 +41,16 @@ freenove_4WD_smart_car:
   commands:
     go_forward:
       data: 'twist'
-      time: 0.10
+      time: 0.50
     # go_backward:
       # data: false
       # time: false
-    # turn_left:
-      # data: false
-      # time: false
-    # turn_right:
-      # data: false
-      # time: false
+    turn_left:
+      data: 'twist'
+      time: 0.50
+    turn_right:
+      data: 'twist'
+      time: 0.50
       
     # action_atomic:
     #   data: false

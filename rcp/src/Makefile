@@ -19,7 +19,7 @@ PIP_X ?= pip
 RCP_X ?= rcp.py
 
 .SILENT: help
-.PHONY: help # ----- (help)  print this help text
+.PHONY: help # ---- (help) print this help text
 help:
 	@grep '^.PHONY: .* #' $(firstword $(MAKEFILE_LIST)) |\
 		sed 's/\.PHONY: \(.*\) # \(.*\)/\1 # \2/' |\
@@ -47,6 +47,7 @@ clean:
 build_sensors: build clean
 	# ros2
 	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)sensors/ros_usage_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)main.py
+	rm -f $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)controller.py
 	cp -rf $(PREFIX)$(DESTDIR_OUT)freenove_4WD_smart_car/ros $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)
 	rm -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)__pycache__
 	# noros
@@ -58,10 +59,23 @@ build_sensors: build clean
 build_actuators: build
 	# ros2
 	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)actuators/ros_usage_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)main.py
+	rm -f $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)controller.py
 	cp -rf $(PREFIX)$(DESTDIR_OUT)freenove_4WD_smart_car/ros $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)
 	rm -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)__pycache__
 	# noros
 	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)actuators/noros_usage_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)main.py
+	cp -rf $(PREFIX)$(DESTDIR_OUT)freenove_4WD_smart_car/noros $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)
+	rm -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)noros/__pycache__
+
+.PHONY: build_loop # (loop)      parse, generate, and update examples
+build_loop: build clean
+	# ros2
+	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)loop/ros_usage_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)main.py
+	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)loop/controller_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)controller.py
+	cp -rf $(PREFIX)$(DESTDIR_OUT)freenove_4WD_smart_car/ros $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)
+	rm -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_ROS)__pycache__
+	# noros
+	cp -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_EXAMPLES)loop/noros_usage_example.py $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)main.py
 	cp -rf $(PREFIX)$(DESTDIR_OUT)freenove_4WD_smart_car/noros $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)
 	rm -rf $(PREFIX)$(DESTDIR_TEST)$(DESTDIR_TEST_ENV_NOROS)noros/__pycache__
 

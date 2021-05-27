@@ -60,6 +60,8 @@ class _Motion:
 class _MotionCommands:
     def __init__(self, templates):
         self.go_forward = self._Go_forward(templates)
+        self.turn_left = self._Turn_left(templates)
+        self.turn_right = self._Turn_right(templates)
 
     def handler(self, msg):
         data = json.loads(msg["data"])
@@ -68,13 +70,51 @@ class _MotionCommands:
             and data["command"] == self.go_forward.name
         ):
             self.go_forward.run(data)
+        if (
+            data["msg_type"] == self.turn_left.data
+            and data["command"] == self.turn_left.name
+        ):
+            self.turn_left.run(data)
+        if (
+            data["msg_type"] == self.turn_right.data
+            and data["command"] == self.turn_right.name
+        ):
+            self.turn_right.run(data)
 
     class _Go_forward:
         def __init__(self, templates):
             self.name = "go_forward"
             self.callback = templates.motion_go_forward_callback
             self.data = "twist"
-            self.time = 0.1
+            self.time = 0.5
+
+        def run(self, data):
+            if self.callback == None:
+                raise NotImplementedError("_callback is not implemented")
+            if not isinstance(self.callback, Callable):
+                raise RuntimeError("_callback is not callable")
+            self.callback(data)
+
+    class _Turn_left:
+        def __init__(self, templates):
+            self.name = "turn_left"
+            self.callback = templates.motion_turn_left_callback
+            self.data = "twist"
+            self.time = 0.5
+
+        def run(self, data):
+            if self.callback == None:
+                raise NotImplementedError("_callback is not implemented")
+            if not isinstance(self.callback, Callable):
+                raise RuntimeError("_callback is not callable")
+            self.callback(data)
+
+    class _Turn_right:
+        def __init__(self, templates):
+            self.name = "turn_right"
+            self.callback = templates.motion_turn_right_callback
+            self.data = "twist"
+            self.time = 0.5
 
         def run(self, data):
             if self.callback == None:
