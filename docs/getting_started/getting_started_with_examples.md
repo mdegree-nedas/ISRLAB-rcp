@@ -162,6 +162,10 @@ user@host:~$ make exec_local_rpi
 
 ![actuators_example_local](loop_local.png)
 
+- example realtime walkthrough gif:
+
+![walkthrough gif](loop_example.gif)
+
 
 ### Example 6: loop (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
 - we assume that you have already pulled the repository in the two machines and you have one terminal opened in the linux/amd64 machine and the other terminal opened in the Raspberry machine
