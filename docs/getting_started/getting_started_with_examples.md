@@ -200,6 +200,13 @@ user@host:~$ make exec_remote_rpi
 ![actuators_example_remote](loop_remote.png)
 
 
+## Inspect Redis traffic
+- We assume that you have already a second terminal opened in the same machine that runs the ROS part
+```console
+user@host:~$ docker exec -it redis redis-cli monitor
+```
+
+
 ## Clean the rcp workspace
 - we assume that you have already a terminal opened in the directory ```<rcp-repo>/rcp/src```
 - we assume that you have already [mounted and sourced the Python virtual environment](#3-mount-and-source-the-python-virtual-environment)
