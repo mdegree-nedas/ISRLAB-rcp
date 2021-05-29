@@ -201,7 +201,7 @@ user@host:~$ make exec_remote_rpi
 
 
 ## Inspect Redis traffic
-- We assume that you have already a second terminal opened in the same machine that runs the ROS part
+- we assume that you have already a second terminal opened in the same machine that runs the ROS part
 ```console
 user@host:~$ docker exec -it redis redis-cli monitor
 ```
