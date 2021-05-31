@@ -72,7 +72,7 @@ https://github.com/mdegree-nedas/rcp/tree/master/docs/getting_started
       type: <type>
       address: <address>
       topic: <topic>
-      data: <data>
+      time: <timer>
     <sensors-list ...>
   actuators:
     <actuator-name>:
