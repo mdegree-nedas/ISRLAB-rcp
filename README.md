@@ -48,7 +48,7 @@ SENSORS
 ---
 ##### fast usage
 ```
-this example:
+example:
 - parses the robot configuration file 'config/freenove.yml'
 - generates the code of both libraries
 - builds and runs a host example that uses the non-ros library
