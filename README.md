@@ -46,7 +46,7 @@ SENSORS
     ...
 ```
 ---
-##### fast usage (example)
+##### fast usage
 ```
 this example:
 - parses the robot configuration file 'config/freenove.yml'
@@ -55,9 +55,8 @@ this example:
 - instantiate a distributed docker infrastructure (virtual machines: redis, ros2 dashing)
 - builds and runs a ros2 package inside the ros2 dashing virtual machine using the ros2 library
 ```
-```console
-user@hostname:~$ make all
-```
+https://github.com/mdegree-nedas/rcp/tree/master/docs/getting_started
+
 ---
 ##### code generation
 ---
