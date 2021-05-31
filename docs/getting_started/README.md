@@ -50,7 +50,7 @@ user@host:~$ make exec_local_rpi
 	- on the left, the ROS part terminal
 	- on the right, the host part terminal
 
-![actuators_example_local](actuators_local.png)
+![actuators_example_local](media/actuators_local.png)
 
 
 ### Example 2: sensors (both ROS and host are in the same machine)
@@ -72,7 +72,7 @@ user@host:~$ make exec_local_rpi
 	- on the left, the ROS part terminal
 	- on the right, the host part terminal
 
-![sensors_example_local](sensors_local.png)
+![sensors_example_local](media/sensors_local.png)
 
 
 ### Example 3: actuators (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
@@ -105,7 +105,7 @@ user@host:~$ make exec_remote_rpi
 	- on the left, the ROS part terminal (in the linux/amd64 machine)
 	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
 
-![actuators_example_remote](actuators_remote.png)
+![actuators_example_remote](media/actuators_remote.png)
 
 
 ### Example 4: sensors (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
@@ -138,7 +138,7 @@ user@host:~$ make exec_remote_rpi
 	- on the left, the ROS part terminal (in the linux/amd64 machine)
 	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
 
-![sensors_example_remote](sensors_remote.png)
+![sensors_example_remote](media/sensors_remote.png)
 
 
 ### Example 5: loop (both ROS and host are in the same machine)
@@ -160,11 +160,11 @@ user@host:~$ make exec_local_rpi
 	- on the left, the ROS part terminal
 	- on the right, the host part terminal
 
-![actuators_example_local](loop_local.png)
+![actuators_example_local](media/loop_local.png)
 
 - example realtime walkthrough gif:
 
-![walkthrough gif](loop_example.gif)
+![walkthrough gif](media/loop_example.gif)
 
 
 ### Example 6: loop (ROS in a linux/amd64 machine and host in a linux/arm/v7 Raspberry machine)
@@ -197,7 +197,7 @@ user@host:~$ make exec_remote_rpi
 	- on the left, the ROS part terminal (in the linux/amd64 machine)
 	- on the right, the host part terminal (in the linux/arm/v7 Raspberry machine)
 
-![actuators_example_remote](loop_remote.png)
+![actuators_example_remote](media/loop_remote.png)
 
 
 ## Inspect Redis traffic

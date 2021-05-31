@@ -2,9 +2,24 @@
 
 https://github.com/aaai-disim-univaq
 ```
-Supervised by Professor Giovanni De Gasperis
-Course: Intelligent Systems And Robotics Laboratory
-@Department of Information Engineering, Computer Science and Mathematics, Univaq
+Project:
+- physical robotics
+
+Authors:
+- Valentino Di Giosaffatte
+- Riccardo Armando Di Prinzio
+
+Course:
+- Intelligent Systems And Robotics Laboratory
+
+Supervised by:
+- Prof. Giovanni De Gasperis
+
+Master Degree in Computer Science
+Curriculum: Network and Data Science
+
+University of L'Aquila
+Department of Information Engineering, Computer Science and Mathematics
 ```
 ---
 ##### info
@@ -50,6 +65,8 @@ user@hostname:~$ make all
 ###### (yml file structure)
 ```yaml
 <robot-name>:
+  message_broker_ip: <ip>
+  message_broker_port: <port>
   sensors:
     <sensor-name>:
       id: <id>
@@ -131,28 +148,6 @@ out
     ├── broker.py
     └── interface.py
 ```
-###### example: geometry_msgs/msg/Twist -> JSON to the non-ros robot (command go_forward)
-```python
-# import the generated ros2 library robot class
-from .ros.core import Freenove_4wd_smart_car
-# import the ros2 Twist class
-from geometry_msgs.msg import Twist
-
-# instanciate the main robot class
-f = Freenove_4wd_smart_car()
-
-# generate the Twist message
-msg = Twist()
-msg.linear.x = random.uniform(0, 1)
-msg.linear.y = random.uniform(0, 1)
-msg.linear.z = random.uniform(0, 1)
-msg.angular.x = random.uniform(0, 1)
-msg.angular.y = random.uniform(0, 1)
-msg.angular.z = random.uniform(0, 1)
-
-# send this message to the non-ros robot
-f.broker.send(f.topics.motion, f.commands.motion.go_forward, f.types.twist, msg)
-```
 ###### Host (example)
 ###### project tree
 ```
@@ -164,27 +159,4 @@ f.broker.send(f.topics.motion, f.commands.motion.go_forward, f.types.twist, msg)
     ├── core.py
     ├── broker.py
     └── template.py
-```
-###### example: -> JSON (geometry_msgs/msg/Twist) to non-ros robot actuator -> automatic go_forward action
-```python
-# import the generated non-ros library robot class
-from noros.core import Freenove_4wd_smart_car
-
-# you can define your custom callbacks here
-def motion_go_forward_another_callback(data):
-    print("motion.go_forward another callback")
-    print(data)
-
-# instanciate the main robot class
-f = Freenove_4wd_smart_car()
-
-# if you want to use your custom callbacks, register them before invoking the receive method
-# if you don't do this, define the custom callbacks inside the noros/template.py file
-
-# f.actuators.motion.commands.go_forward.callback = motion_go_forward_another_callback
-
-# start to receive messages 
-# (automatic routing, automatic handlers calls (multithreaded), 
-# automatic redirection to the correct action, automatic callback call)
-f.broker.receive()
 ```
