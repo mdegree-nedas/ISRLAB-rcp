@@ -46,7 +46,7 @@ SENSORS
     ...
 ```
 ---
-##### fast usage
+##### usage
 ```
 example:
 - parses the robot configuration file 'config/freenove.yml'
@@ -133,7 +133,7 @@ out
 ...
 ```
 ---
-##### usage
+##### structure
 ---
 ###### ROS2 package (example)
 ###### project tree
