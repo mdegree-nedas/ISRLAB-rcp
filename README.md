@@ -1,6 +1,11 @@
 ###### RCP - Robot Configuration Parser
 
+# Artificial Agents and Artificial Intelligence Research Group @ DISIM.UnivAQ
 https://github.com/aaai-disim-univaq
+
+## Master degree student Project: RCP
+### Robot Consiguration Parser
+
 ```
 Project:
 - physical robotics
@@ -22,6 +27,9 @@ University of L'Aquila
 Department of Information Engineering, Computer Science and Mathematics
 ```
 ---
+
+# AIM: Control non-ROS2 robots from a ROS2 environment
+
 ##### info
 ```
 rcp is a parser and code generator that works with abstract robot descriptions written in yaml format.
